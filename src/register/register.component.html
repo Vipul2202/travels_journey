@@ -1,0 +1,431 @@
+
+
+// <!-- flight-booking.component.html -->
+<div class="container-fluid mt-3">
+  <!-- Search Section -->
+  <div class="card mb-4 shadow-sm">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="form-group">
+            <i class="fa fa-map-marker-alt text-muted"></i>
+            <input type="text" class="form-control" placeholder="Chennai (All locations)" value="Chennai (All locations)">
+          </div>
+        </div>
+        <div class="col-md-1 d-flex align-items-center justify-content-center">
+          <button class="btn btn-sm btn-light rounded-circle border">
+            <i class="fa fa-exchange-alt"></i>
+          </button>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <i class="fa fa-map-marker-alt text-muted"></i>
+            <input type="text" class="form-control" placeholder="Bangalore (All locations)" value="Bangalore (All locations)">
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="form-group">
+            <i class="fa fa-calendar text-muted"></i>
+            <input type="text" class="form-control" placeholder="Thu, Apr 22" value="Thu, Apr 22">
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="form-group">
+            <i class="fa fa-users text-muted"></i>
+            <input type="text" class="form-control" placeholder="4 Passengers" value="4 Passengers">
+          </div>
+        </div>
+        <div class="col-md-1">
+          <button class="btn btn-danger w-100">Search</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Results Header -->
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h5 class="mb-0">Showing 118 buses</h5>
+  </div>
+
+  <!-- Filters & Results -->
+  <div class="row">
+    <!-- Filters Section -->
+    <div class="col-md-3">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <div class="d-flex justify-content-between mb-3">
+            <h6 class="mb-0">Filters</h6>
+            <button class="btn btn-sm text-danger border-0">Reset</button>
+          </div>
+
+          <!-- Filter Options -->
+          <div class="mb-3">
+            <div class="form-check d-flex align-items-center">
+              <input class="form-check-input" type="checkbox" id="redDeals" checked>
+              <label class="form-check-label ms-2" for="redDeals">
+                <div>
+                  <strong>redDeals (4)</strong>
+                </div>
+                <small class="text-muted">Extra discount on top rated buses, etc.</small>
+              </label>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <div class="form-check d-flex align-items-center">
+              <input class="form-check-input" type="checkbox" id="primo">
+              <label class="form-check-label ms-2" for="primo">
+                <div>
+                  <strong>Primo (17)</strong>
+                </div>
+                <small class="text-muted">Best-in-class bus travel with speed and comfort</small>
+              </label>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <div class="form-check d-flex align-items-center">
+              <input class="form-check-input" type="checkbox" id="safetyPlus">
+              <label class="form-check-label ms-2" for="safetyPlus">
+                <div>
+                  <strong>Safety Plus (24)</strong>
+                </div>
+                <small class="text-muted">Buses with covid safety measures</small>
+              </label>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <div class="form-check d-flex align-items-center">
+              <input class="form-check-input" type="checkbox" id="liveTracking">
+              <label class="form-check-label ms-2" for="liveTracking">
+                <div>
+                  <strong>Live Tracking (19)</strong>
+                </div>
+                <small class="text-muted">Buses with real time location on maps</small>
+              </label>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <div class="form-check d-flex align-items-center">
+              <input class="form-check-input" type="checkbox" id="flexiTicket">
+              <label class="form-check-label ms-2" for="flexiTicket">
+                <div>
+                  <strong>FlexiTicket (18)</strong>
+                </div>
+                <small class="text-muted">Buses with free seat change</small>
+              </label>
+            </div>
+          </div>
+
+          <!-- Departure Time Filters -->
+          <h6 class="mt-4 mb-3">Departure Time</h6>
+          <div class="row">
+            <div class="col-6 mb-2">
+              <button class="btn btn-outline-secondary btn-sm w-100">
+                <small>Before 6 am (4)</small>
+              </button>
+            </div>
+            <div class="col-6 mb-2">
+              <button class="btn btn-outline-secondary btn-sm w-100 active">
+                <small>6 am - 12 pm (30)</small>
+              </button>
+            </div>
+            <div class="col-6 mb-2">
+              <button class="btn btn-outline-secondary btn-sm w-100">
+                <small>12 pm - 6 pm (24)</small>
+              </button>
+            </div>
+            <div class="col-6 mb-2">
+              <button class="btn btn-outline-secondary btn-sm w-100">
+                <small>After 6 pm (41)</small>
+              </button>
+            </div>
+          </div>
+
+          <!-- Arrival Time Filters -->
+          <h6 class="mt-4 mb-3">Arrival Time</h6>
+          <div class="row">
+            <div class="col-6 mb-2">
+              <button class="btn btn-outline-secondary btn-sm w-100">
+                <small>Before 6 am (4)</small>
+              </button>
+            </div>
+            <div class="col-6 mb-2">
+              <button class="btn btn-outline-secondary btn-sm w-100 active">
+                <small>6 am - 12 pm (30)</small>
+              </button>
+            </div>
+            <div class="col-6 mb-2">
+              <button class="btn btn-outline-secondary btn-sm w-100">
+                <small>12 pm - 6 pm (24)</small>
+              </button>
+            </div>
+            <div class="col-6 mb-2">
+              <button class="btn btn-outline-secondary btn-sm w-100">
+                <small>After 6 pm (41)</small>
+              </button>
+            </div>
+          </div>
+
+          <!-- Bus Types -->
+          <h6 class="mt-4 mb-3">Bus Types</h6>
+          <div class="row">
+            <div class="col-6 mb-2">
+              <button class="btn btn-outline-secondary btn-sm w-100">
+                <small>A/C (55)</small>
+              </button>
+            </div>
+            <div class="col-6 mb-2">
+              <button class="btn btn-outline-secondary btn-sm w-100">
+                <small>Non A/C (44)</small>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Section -->
+    <div class="col-md-9">
+      <!-- Sort Options -->
+      <div class="card shadow-sm mb-3">
+        <div class="card-body p-0">
+          <div class="row g-0">
+            <div class="col border-end text-center p-2">
+              <a href="#" class="text-decoration-none text-dark">Departure</a>
+            </div>
+            <div class="col border-end text-center p-2">
+              <a href="#" class="text-decoration-none text-dark">Duration</a>
+            </div>
+            <div class="col border-end text-center p-2">
+              <a href="#" class="text-decoration-none text-dark">Arrival</a>
+            </div>
+            <div class="col border-end text-center p-2">
+              <a href="#" class="text-decoration-none text-danger fw-bold">Ratings <i class="fa fa-sort-down"></i></a>
+            </div>
+            <div class="col border-end text-center p-2">
+              <a href="#" class="text-decoration-none text-dark">Fare</a>
+            </div>
+            <div class="col text-center p-2">
+              <a href="#" class="text-decoration-none text-dark">Seats</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Safety Notice -->
+      <div class="alert alert-success border-0 d-flex align-items-center mb-4">
+        <i class="fa fa-shield-alt text-success me-2"></i>
+        <span>All bus ratings include safety as a major factor</span>
+      </div>
+
+      <!-- Bus Result 1 -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-body">
+          <div class="row align-items-center">
+            <!-- Bus Info -->
+            <div class="col-md-9">
+              <div class="d-flex align-items-center mb-2">
+                <span class="badge bg-success me-2">4.7 (314)</span>
+                <span class="badge bg-light text-primary border border-primary me-2">Primo</span>
+                <span class="badge bg-light text-primary border border-primary">FlexiTicket</span>
+              </div>
+              <h5 class="mb-1">Intracity Travels</h5>
+              <p class="text-muted mb-2">A/C Sleeper (2+1)</p>
+              
+              <div class="row mt-3">
+                <div class="col-md-4">
+                  <p class="mb-0">Koyambedu</p>
+                  <h5 class="mb-0">8:30 am <span class="text-muted small">May 20</span></h5>
+                </div>
+                <div class="col-md-4 text-center">
+                  <p class="text-muted mb-1">6h 10m</p>
+                  <div class="progress" style="height: 2px;">
+                    <div class="progress-bar bg-success" style="width: 100%"></div>
+                  </div>
+                </div>
+                <div class="col-md-4 text-end">
+                  <p class="mb-0">Madiwala</p>
+                  <h5 class="mb-0">2:40 pm <span class="text-muted small">May 20</span></h5>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Price & Availability -->
+            <div class="col-md-3 text-end">
+              <div class="mb-2">
+                <span class="text-muted small">Starts from</span>
+                <h4 class="text-danger mb-0">₹ 599</h4>
+              </div>
+              <p class="small text-muted mb-2">24 window seats left</p>
+              <button class="btn btn-danger">Select seats</button>
+            </div>
+          </div>
+          
+          <!-- Additional Options -->
+          <div class="row mt-3 pt-3 border-top">
+            <div class="col-12">
+              <div class="d-flex flex-wrap">
+                <div class="dropdown me-3">
+                  <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button">
+                    Primo <i class="fa fa-chevron-down"></i>
+                  </button>
+                </div>
+                <div class="dropdown me-3">
+                  <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button">
+                    Safety+ <i class="fa fa-chevron-down"></i>
+                  </button>
+                </div>
+                <div class="dropdown me-3">
+                  <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button">
+                    Boarding & Dropping Points <i class="fa fa-chevron-down"></i>
+                  </button>
+                </div>
+                <div class="dropdown me-3">
+                  <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button">
+                    Rest Stops <i class="fa fa-chevron-down"></i>
+                  </button>
+                </div>
+                <div class="dropdown me-3">
+                  <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button">
+                    Bus Photos & Amenities <i class="fa fa-chevron-down"></i>
+                  </button>
+                </div>
+                <div class="dropdown">
+                  <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button">
+                    Reviews & Policies <i class="fa fa-chevron-down"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bus Result 2 -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-body">
+          <div class="row align-items-center">
+            <!-- Bus Info -->
+            <div class="col-md-9">
+              <div class="d-flex align-items-center mb-2">
+                <span class="badge bg-success me-2">4.6 (336)</span>
+                <span class="badge bg-light text-primary border border-primary me-2">Primo</span>
+                <span class="badge bg-light text-primary border border-primary">FlexiTicket</span>
+              </div>
+              <h5 class="mb-1">YBM Travels</h5>
+              <p class="text-muted mb-2">A/C Sleeper (2+1)</p>
+              
+              <div class="row mt-3">
+                <div class="col-md-4">
+                  <p class="mb-0">Koyambedu</p>
+                  <h5 class="mb-0">11:00 pm <span class="text-muted small">May 20</span></h5>
+                </div>
+                <div class="col-md-4 text-center">
+                  <p class="text-muted mb-1">6h 15m</p>
+                  <div class="progress" style="height: 2px;">
+                    <div class="progress-bar bg-success" style="width: 100%"></div>
+                  </div>
+                </div>
+                <div class="col-md-4 text-end">
+                  <p class="mb-0">Madiwala</p>
+                  <h5 class="mb-0">5:15 am <span class="text-muted small">May 21</span></h5>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Price & Availability -->
+            <div class="col-md-3 text-end">
+              <div class="mb-2">
+                <span class="text-muted small">Starts from</span>
+                <h4 class="text-danger mb-0">₹ 808</h4>
+              </div>
+              <p class="small text-muted mb-2">30 seats left</p>
+              <button class="btn btn-danger">Select seats</button>
+            </div>
+          </div>
+          
+          <!-- Additional Options -->
+          <div class="row mt-3 pt-3 border-top">
+            <div class="col-12">
+              <div class="d-flex flex-wrap">
+                <div class="dropdown me-3">
+                  <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button">
+                    Safety+ <i class="fa fa-chevron-down"></i>
+                  </button>
+                </div>
+                <div class="dropdown me-3">
+                  <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button">
+                    Boarding & Dropping Points <i class="fa fa-chevron-down"></i>
+                  </button>
+                </div>
+                <div class="dropdown me-3">
+                  <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button">
+                    Rest Stops <i class="fa fa-chevron-down"></i>
+                  </button>
+                </div>
+                <div class="dropdown me-3">
+                  <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button">
+                    Bus Photos & Amenities <i class="fa fa-chevron-down"></i>
+                  </button>
+                </div>
+                <div class="dropdown">
+                  <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button">
+                    Reviews & Policies <i class="fa fa-chevron-down"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bus Result 3 -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-body">
+          <div class="row align-items-center">
+            <!-- Bus Info -->
+            <div class="col-md-9">
+              <div class="d-flex align-items-center mb-2">
+                <span class="badge bg-success me-2">4.2 (190)</span>
+                <span class="badge bg-light text-primary border border-primary me-2">Primo</span>
+                <span class="badge bg-light text-primary border border-primary">FlexiTicket</span>
+              </div>
+              <h5 class="mb-1">Hail Trip</h5>
+              <p class="text-muted mb-2">A/C Sleeper (2+1)</p>
+              
+              <div class="row mt-3">
+                <div class="col-md-4">
+                  <p class="mb-0">Koyambedu</p>
+                  <h5 class="mb-0">11:50 pm <span class="text-muted small">May 20</span></h5>
+                </div>
+                <div class="col-md-4 text-center">
+                  <p class="text-muted mb-1">6h 10m</p>
+                  <div class="progress" style="height: 2px;">
+                    <div class="progress-bar bg-success" style="width: 100%"></div>
+                  </div>
+                </div>
+                <div class="col-md-4 text-end">
+                  <p class="mb-0">Madiwala</p>
+                  <h5 class="mb-0">6:00 am <span class="text-muted small">May 21</span></h5>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Price & Availability -->
+            <div class="col-md-3 text-end">
+              <div class="mb-2">
+                <span class="text-muted small">Starts from</span>
+                <h4 class="text-danger mb-0">₹ 599</h4>
+              </div>
+              <p class="small text-muted mb-2">25 seats left</p>
+              <button class="btn btn-danger">Select seats</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

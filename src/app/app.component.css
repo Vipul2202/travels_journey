@@ -1,0 +1,58 @@
+.text-navy {
+    color: #0a0e54;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .hero-section {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn-warning {
+    background-color: #ffa500;
+    border-color: #ffa500;
+  }
+  
+  .btn-warning:hover {
+    background-color: #ff9000;
+    border-color: #ff9000;
+  }
+  @media (max-width: 768px) {
+    .card-body .row {
+      flex-direction: column;
+    }
+    
+    .card-body .col-md-4,
+    .card-body .col-md-3,
+    .card-body .col-md-2 {
+      width: 100%;
+      border-right: none;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .card-body .col-md-2 {
+      padding: 15px;
+    }
+    
+    h1.display-3 {
+      font-size: 2.5rem;
+    }
+    
+    h2.display-4 {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .navbar-brand {
+      font-size: 1.2rem;
+    }
+    
+    h1.display-3 {
+      font-size: 2rem;
+    }
+  }

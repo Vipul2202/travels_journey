@@ -1,0 +1,68 @@
+/* // flight-booking.component.scss */
+.form-control {
+  padding-left: 30px;
+}
+
+.form-group {
+  position: relative;
+  
+  i {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    z-index: 10;
+  }
+}
+
+.card {
+  border-radius: 8px;
+  border: none;
+}
+
+.btn-danger {
+  background-color: #e63946;
+  border-color: #e63946;
+}
+
+.text-danger {
+  color: #e63946 !important;
+}
+
+.badge.bg-success {
+  background-color: #2a9d8f !important;
+}
+
+.badge.bg-light {
+  background-color: #f8f9fa;
+  color: #0d6efd;
+}
+
+.progress-bar.bg-success {
+  background-color: #2a9d8f !important;
+}
+
+.alert-success {
+  background-color: #e8f5e9;
+  color: #2a9d8f;
+}
+
+/* // Filter styles */
+.form-check-input:checked {
+  background-color: #e63946;
+  border-color: #e63946;
+}
+
+.btn-outline-secondary.active {
+  background-color: #e6f2ff;
+  color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+/* // Dropdown styles */
+.dropdown-toggle::after {
+  display: none;
+}
+
+.dropdown {
+  margin-bottom: 10px;
+}
