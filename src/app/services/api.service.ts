@@ -3,34 +3,28 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root', // Available throughout the app
+  providedIn: 'root',
 })
 export class ApiService {
-  private baseUrl = 'http://localhost/api';
+  private baseUrl = 'http://localhost:5002/api';
 
   constructor(private http: HttpClient) {}
 
-  // Add a city (for users)
-  addCity(cityName: string): Observable<any> {
-    return this.http.post(`${this.baseUrl}/add_city`, { name: cityName });
-  }
   loginAdmin(credentials: {
     email: string;
     password: string;
   }): Observable<any> {
-    return this.http.post(`${this.baseUrl}/login`, credentials);
+    return this.http.post(`${this.baseUrl}/Auth/login`, credentials);
   }
 
-  // Admin Signup API Call
   signupAdmin(data: {
     name: string;
     email: string;
     password: string;
   }): Observable<any> {
-    return this.http.post(`${this.baseUrl}/signup`, data);
+    return this.http.post(`${this.baseUrl}/Auth/register`, data);
   }
-  // Get all cities
-  getCities(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/cities`);
+  getUserDetail(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/Auth/getuserdetails`);
   }
 }
