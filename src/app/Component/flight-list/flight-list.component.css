@@ -1,0 +1,14 @@
+.flight-card {
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.flight-card:hover {
+    transform: translateY(-5px);
+}
+
+.price {
+    color: #ffc008;
+    font-size: 24px;
+    font-weight: bold;
+}

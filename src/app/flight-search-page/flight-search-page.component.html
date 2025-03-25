@@ -1,0 +1,147 @@
+<div class="container">
+  <!-- Hero Section -->
+  <section class="position-relative h-screen max-h-800 overflow-hidden">
+    <div class="position-absolute inset-0 bg-flight-dark opacity-50 z-10"></div>
+   <div class="background-image-container"></div>
+
+    
+    <div class="position-relative z-20 container mx-auto px-4 h-full d-flex flex-column justify-content-center align-items-center text-center h-800">
+      <h1 class="display-4 text-white mb-6 animate-fade-up">
+        Explore the World with Comfort
+      </h1>
+      <p class="lead text-white opacity-90 mb-10 animate-fade-up" style="animation-delay: 0.1s;">
+        Discover amazing destinations, find the best deals, and create unforgettable memories with our premium flight booking service.
+      </p>
+      
+      <div class="w-100 max-w-4xl animate-fade-up" style="animation-delay: 0.2s;">
+       <app-flight-search-component/>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Destinations -->
+  <section class="py-20 bg-flight-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="h3 font-semibold text-flight-dark mb-4">Popular Destinations</h2>
+        <p class="text-flight-slate max-w-2xl mx-auto">
+          Explore our most popular flight destinations with exclusive deals and comprehensive travel guides.
+        </p>
+      </div>
+      
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-6">
+        <div *ngFor="let destination of destinations" class="col">
+          <div class="card overflow-hidden group hover-shadow-sm transition-shadow duration-300">
+            <div class="position-relative h-64 overflow-hidden">
+              <img 
+                [src]="destination.image" 
+                [alt]="destination.name"
+                class="w-100 h-100 object-cover object-center transition-transform duration-500 group-hover-scale-110"
+              />
+              <div class="position-absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+              <div class="position-absolute bottom-0 left-0 right-0 p-4 text-white">
+                <h3 class="h5 font-medium">{{ destination.name }}</h3>
+                <p class="text-white/90">Starting from {{ destination.price }}</p>
+              </div>
+            </div>
+            <div class="card-body p-4">
+              <button 
+                class="btn btn-outline w-100 mt-2"
+                (click)="handleViewFlights(destination.name)"
+              >
+                View Flights
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-10">
+        <button 
+          class="btn bg-flight-blue text-white"
+          (click)="handleViewAllDestinations()"
+        >
+          View All Destinations
+          <i class="ml-2 h-4 w-4 fa fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="py-20 bg-flight-light">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="h3 font-semibold text-flight-dark mb-4">Why Choose SkyWay</h2>
+        <p class="text-flight-slate max-w-2xl mx-auto">
+          We provide a seamless booking experience with exclusive benefits and superior customer service.
+        </p>
+      </div>
+      
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-8">
+        <div class="col text-center p-6 bg-white rounded-lg shadow-sm">
+          <div class="d-inline-flex items-center justify-center w-16 h-16 rounded-circle bg-flight-blue/10 text-flight-blue mb-4">
+            <i class="fa fa-piggy-bank h-8 w-8"></i>
+          </div>
+          <h3 class="h5 font-medium text-flight-dark mb-3">Best Price Guarantee</h3>
+          <p class="text-flight-slate">
+            Find a lower price? We'll match it and give you an additional discount.
+          </p>
+        </div>
+        
+        <div class="col text-center p-6 bg-white rounded-lg shadow-sm">
+          <div class="d-inline-flex items-center justify-center w-16 h-16 rounded-circle bg-flight-blue/10 text-flight-blue mb-4">
+            <i class="fa fa-clock h-8 w-8"></i>
+          </div>
+          <h3 class="h5 font-medium text-flight-dark mb-3">24/7 Customer Support</h3>
+          <p class="text-flight-slate">
+            Our dedicated team is available around the clock to assist you with any queries.
+          </p>
+        </div>
+        
+        <div class="col text-center p-6 bg-white rounded-lg shadow-sm">
+          <div class="d-inline-flex items-center justify-center w-16 h-16 rounded-circle bg-flight-blue/10 text-flight-blue mb-4">
+            <i class="fa fa-shield h-8 w-8"></i>
+          </div>
+          <h3 class="h5 font-medium text-flight-dark mb-3">Secure Booking</h3>
+          <p class="text-flight-slate">
+            Your payment and personal information are protected with advanced encryption.
+          </p>
+        </div>
+        
+        <div class="col text-center p-6 bg-white rounded-lg shadow-sm">
+          <div class="d-inline-flex items-center justify-center w-16 h-16 rounded-circle bg-flight-blue/10 text-flight-blue mb-4">
+            <i class="fa fa-award h-8 w-8"></i>
+          </div>
+          <h3 class="h5 font-medium text-flight-dark mb-3">Reward Program</h3>
+          <p class="text-flight-slate">
+            Earn points with every booking and redeem them for discounts on future trips.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="py-20 bg-flight-blue text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="h3 font-semibold mb-4">Subscribe to Our Newsletter</h2>
+        <p class="text-white/90 mb-8">
+          Be the first to know about exclusive deals, special offers, and upcoming promotions.
+        </p>
+        
+        <div class="d-flex flex-column flex-sm-row gap-3">
+          <input 
+            type="email"
+            placeholder="Enter your email address" 
+            class="h-12 bg-white/10 border-white/20 text-white placeholder-opacity-50 flex-grow"
+          />
+          <button class="h-12 px-8 bg-white text-flight-blue hover:bg-white/90">
+            Subscribe
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

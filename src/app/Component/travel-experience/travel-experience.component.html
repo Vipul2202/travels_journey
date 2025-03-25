@@ -1,0 +1,19 @@
+<section class="py-5 bg-light">
+  <div class="container text-center">
+    <h5 class="text-warning">Travel Experience</h5>
+    <h2 class="fw-bold">Crafting Unforgettable Journeys</h2>
+    <div class="row mt-4">
+      <div class="col-md-4" *ngFor="let experience of experiences">
+        <div class="card p-3 text-center">
+          <img
+            [src]="experience.img"
+            class="img-fluid rounded mb-3"
+            alt="{{ experience.name }}"
+          />
+          <h5>{{ experience.name }}</h5>
+          <p>{{ experience.text }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

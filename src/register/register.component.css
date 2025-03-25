@@ -19,12 +19,12 @@
   border: none;
 }
 
-.btn-danger {
+.btn-warning {
   background-color: #e63946;
   border-color: #e63946;
 }
 
-.text-danger {
+.text-warning {
   color: #e63946 !important;
 }
 

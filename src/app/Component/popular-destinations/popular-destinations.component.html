@@ -1,0 +1,18 @@
+<section class="py-5">
+  <div class="container text-center">
+    <h5 class="text-warning">Destination</h5>
+    <h2 class="fw-bold">Popular Destinations</h2>
+    <div class="row mt-4">
+      <div class="col-md-3" *ngFor="let destination of destinations">
+        <div class="card p-3 text-center">
+          <img
+            [src]="destination.img"
+            class="img-fluid rounded mb-3"
+            alt="{{ destination.name }}"
+          />
+          <h5>{{ destination.name }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

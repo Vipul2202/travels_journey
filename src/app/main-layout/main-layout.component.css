@@ -1,0 +1,109 @@
+.text-navy {
+    color: #0a0e54;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-warning {
+    background-color: #ffa500;
+    border-color: #ffa500;
+}
+
+.btn-warning:hover {
+    background-color: #ff9000;
+    border-color: #ff9000;
+}
+
+@media (max-width: 768px) {
+    .card-body .row {
+        flex-direction: column;
+    }
+
+    .card-body .col-md-4,
+    .card-body .col-md-3,
+    .card-body .col-md-2 {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    .card-body .col-md-2 {
+        padding: 15px;
+    }
+
+    h1.display-3 {
+        font-size: 2.5rem;
+    }
+
+    h2.display-4 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    h1.display-3 {
+        font-size: 2rem;
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: rotate(-25deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(-25deg) translateY(-20px);
+    }
+}
+
+.bounce-animation {
+    animation: bounce 3s ease-in-out infinite;
+}
+
+
+input:focus {
+    outline: none;
+    box-shadow: none;
+    border: 2px solid #007bff;
+    -webkit-focus-ring-color: transparent;
+}
+
+.search-box {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: -50px;
+}
+
+.form-control {
+    height: 50px;
+    border-radius: 4px;
+}
+
+.btn-search {
+    height: 50px;
+    width: 100%;
+    background: #ffc007;
+    color: white;
+    border: none;
+    font-weight: bold;
+}
+
+.btn-search:hover {
+    background: #fbcd43;
+}

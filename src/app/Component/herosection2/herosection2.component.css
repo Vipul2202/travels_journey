@@ -1,0 +1,53 @@
+/* Hero Section Styling */
+.hero-section {
+    background-color: #0b162c;
+    color: white;
+    padding: 100px 0;
+    position: relative;
+}
+
+/* Hero Title */
+.hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+/* Highlight Text */
+.highlight {
+    background-color: #ff6600;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Hero Text */
+.hero-text {
+    color: #ccc;
+    margin-top: 10px;
+    max-width: 450px;
+}
+
+/* Search Box */
+.search-box {
+    background: white;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Input Fields */
+.search-box input {
+    border: none;
+    padding: 10px;
+}
+
+/* Search Button */
+.btn-warning {
+    background: #ff6600;
+    border: none;
+}
+
+/* Airplane Image */
+.airplane-img {
+    width: 100%;
+    max-width: 500px;
+}
