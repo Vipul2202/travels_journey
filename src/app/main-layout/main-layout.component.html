@@ -1,0 +1,96 @@
+<div class="container-fluid p-0">
+ 
+ <app-header></app-header>
+
+  
+  <section class="hero-section py-5" style="background-color: #f0f5fa;">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-lg-8">
+          <h1 class="display-3 fw-bold text-navy">Book A Ticket And<br>Just Leave</h1>
+          <p class="text-muted">Discover amazing places at exclusive deals</p>
+        </div>
+      </div>
+
+      <!-- Search Form -->
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="card shadow-sm border-0 rounded-3 mb-5">
+            <div class="card-body p-0">
+              <!-- -->
+              <div class="search-box">
+        <div class="row g-3">
+          <div class="col-md-3">
+            <label class="form-label">From</label>
+            <input type="text" class="form-control" placeholder="Delhi" [(ngModel)]="from">
+          </div>
+          <div class="col-md-3">
+            <label class="form-label">To</label>
+            <input type="text" class="form-control" placeholder="Mumbai" [(ngModel)]="to">
+          </div>
+          <div class="col-md-3">
+            <label class="form-label">Journey date</label>
+            <input type="date" class="form-control" [(ngModel)]="departureDate">
+          </div>
+          <div class="col-md-3">
+            <label class="form-label">&nbsp;</label>
+            <button class="btn btn-search" [routerLink]="['/flights']">Search Flights</button>
+          </div>
+        </div>
+      </div>
+      </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="text-center">
+            <img src="/assets/Images/hero-plane-shape.png" alt="Travel illustration"  class="img-fluid bounce-animation"  style="transform: rotate(-25deg); max-height: 350px;">
+          </div>
+        </div>
+      </div>
+   
+  </section>
+
+  <app-flight-list/>
+
+  <!-- <section class="py-5">
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col-md-8">
+          <h2 class="display-4 text-navy fw-bold">Our Best Tour</h2>
+          <p class="text-muted">
+            These are also locations where it's easy to feel healthier, happier 
+            and less stressed than in America. And for more destinations on 
+            the Global Retirement Index.
+          </p>
+        </div>
+        <div class="col-md-4 d-flex align-items-center justify-content-end">
+          <a href="#" class="text-warning text-decoration-none">
+            See All Tours <i class="fa fa-arrow-right ms-2"></i>
+          </a>
+        </div>
+      </div>
+
+    
+      <div class="row">
+       
+      </div>
+    </div>
+  </section> -->
+
+  <app-about-us/>
+  <!-- <app-flight-search-page/> -->
+   <app-popular-destinations/>
+   <!-- <app-flight-deals/> -->
+   <!-- <app-flight-schedules/> -->
+   <!-- <app-private-flight-request/> -->
+   <app-travel-experience/>
+   <!-- <app-featured-deals/> -->
+   <app-testimonials/>
+   <!-- <app-flight-search-component/> -->
+<app-footer/>
+</div>

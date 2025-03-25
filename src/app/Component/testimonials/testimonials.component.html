@@ -1,0 +1,21 @@
+<section class="py-5 bg-light">
+  <div class="container text-center">
+    <h5 class="text-warning">Testimonials</h5>
+    <h2 class="fw-bold">What People Say About Our Services</h2>
+    <div class="row mt-4">
+      <div class="col-md-4" *ngFor="let testimonial of testimonials">
+        <div class="card p-3 text-center">
+          <img
+            [src]="testimonial.img"
+            class="img-fluid rounded-circle mb-3"
+            width="100"
+            height="100"
+            alt="{{ testimonial.name }}"
+          />
+          <h5>{{ testimonial.name }}</h5>
+          <p>{{ testimonial.text }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,58 @@
+<div class="flight-search-container">
+  <h2>Search Flights</h2>
+
+  <!-- Flight Type Selection -->
+  <div class="flight-type-selection">
+    <label>
+      <input type="radio" name="flightType" value="roundtrip" [(ngModel)]="flightType" /> Round Trip
+    </label>
+    <label>
+      <input type="radio" name="flightType" value="oneway" [(ngModel)]="flightType" /> One Way
+    </label>
+    <label>
+      <input type="radio" name="flightType" value="multicity" [(ngModel)]="flightType" /> Multi-City
+    </label>
+  </div>
+
+  <!-- One Way / Round Trip Inputs -->
+  <div *ngIf="flightType !== 'multicity'">
+    <label>Origin:</label>
+    <input type="text" [(ngModel)]="origin" placeholder="Enter origin" />
+
+    <label>Destination:</label>
+    <input type="text" [(ngModel)]="destination" placeholder="Enter destination" />
+
+    <label>Departure Date:</label>
+    <input type="date" [(ngModel)]="departDate" />
+
+    <label *ngIf="flightType === 'roundtrip'">Return Date:</label>
+    <input *ngIf="flightType === 'roundtrip'" type="date" [(ngModel)]="returnDate" />
+  </div>
+
+  <!-- Multi-City Flight Inputs -->
+  <div *ngIf="flightType === 'multicity'">
+    <div *ngFor="let leg of flightLegs; let i = index">
+      <h4>Flight Leg {{ i + 1 }}</h4>
+
+      <label>Origin:</label>
+      <input type="text" [(ngModel)]="leg.origin" placeholder="Enter origin" />
+
+      <label>Destination:</label>
+      <input type="text" [(ngModel)]="leg.destination" placeholder="Enter destination" />
+
+      <label>Departure Date:</label>
+      <input type="date" [(ngModel)]="leg.departDate" />
+
+      <button (click)="removeFlightLeg(leg.id)" *ngIf="flightLegs.length > 2">Remove</button>
+    </div>
+
+    <button (click)="addFlightLeg()">+ Add Another Flight</button>
+  </div>
+
+  <!-- Passengers Input -->
+  <label>Passengers:</label>
+  <input type="number" [(ngModel)]="passengers" min="1" />
+
+  <!-- Search Button -->
+  <button (click)="handleSearch()">Search Flights</button>
+</div>

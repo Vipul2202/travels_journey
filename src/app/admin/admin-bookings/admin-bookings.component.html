@@ -1,0 +1,139 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-2 bg-dark min-vh-100 p-0">
+      <div class="d-flex flex-column p-3 text-white">
+        <span class="fs-4 mb-4">Admin Panel</span>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item mb-2">
+            <a
+              [routerLink]="['/admin']"
+              [routerLinkActiveOptions]="{ exact: true }"
+              routerLinkActive="active"
+              class="nav-link text-white"
+            >
+              <i class="bi bi-speedometer2 me-2"></i>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item mb-2">
+            <a
+              [routerLink]="['/admin/bookings']"
+              routerLinkActive="active"
+              class="nav-link text-white"
+            >
+              <i class="bi bi-calendar-check me-2"></i>
+              Bookings
+            </a>
+          </li>
+          <li class="nav-item mb-2">
+            <a
+              [routerLink]="['/admin/addcity']"
+              routerLinkActive="active"
+              class="nav-link text-white"
+            >
+              <i class="bi bi-plus-circle me-2"></i>
+              Add City
+            </a>
+          </li>
+          <li class="nav-item mb-2">
+            <a
+              [routerLink]="['/admin/add-flight']"
+              routerLinkActive="active"
+              class="nav-link text-white"
+            >
+              <i class="bi bi-plus-circle me-2"></i>
+              Add Flight
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="col-md-10 p-4">
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h5 class="card-title">All Bookings</h5>
+            <div class="d-flex gap-2">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Search bookings..."
+                [(ngModel)]="searchTerm"
+              />
+              <select class="form-select" [(ngModel)]="statusFilter">
+                <option value="">All Status</option>
+                <option value="Confirmed">Confirmed</option>
+                <option value="Pending">Pending</option>
+                <option value="Cancelled">Cancelled</option>
+              </select>
+            </div>
+          </div>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Booking ID</th>
+                <th>Customer Name</th>
+                <th>Flight Details</th>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let booking of bookings">
+                <td>{{ booking.id }}</td>
+                <td>{{ booking.customerName }}</td>
+                <td>
+                  <div>{{ booking.flightNumber }}</div>
+                  <small class="text-muted">{{ booking.route }}</small>
+                </td>
+                <td>{{ booking.date }}</td>
+                <td>${{ booking.amount }}</td>
+                <td>
+                  <span [class]="'badge ' + booking.statusClass">{{
+                    booking.status
+                  }}</span>
+                </td>
+                <td>
+                  <div class="btn-group">
+                    <button
+                      class="btn btn-sm btn-outline-warning"
+                      (click)="viewDetails(booking.id)"
+                    >
+                      View
+                    </button>
+                    <button
+                      class="btn btn-sm btn-outline-warning"
+                      (click)="cancelBooking(booking.id)"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <nav>
+            <ul class="pagination justify-content-end">
+              <li class="page-item">
+                <a class="page-link" href="#">Previous</a>
+              </li>
+              <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

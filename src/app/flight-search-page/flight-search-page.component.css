@@ -1,0 +1,50 @@
+/* Add custom CSS styles if needed */
+.bg-flight-dark {
+    background-color: #1e293b;
+}
+
+.bg-flight-white {
+    background-color: #f1f5f9;
+}
+
+.bg-flight-light {
+    background-color: #f8fafc;
+}
+
+.bg-flight-blue {
+    background-color: #2563eb;
+}
+
+.text-flight-dark {
+    color: #1e293b;
+}
+
+.text-flight-slate {
+    color: #4b5563;
+}
+
+.text-flight-blue {
+    color: #2563eb;
+}
+
+.text-flight-slate {
+    color: #6b7280;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Arial', sans-serif;
+}
+.background-image-container {
+
+    background-image: url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1200&auto=format');
+    background-position: center ;
+    background-size: cover;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+.h-800{
+    height: 600px !important;
+}

@@ -1,0 +1,40 @@
+   <!-- <app-header /> -->
+<div class="container my-5">
+  <div class="row">
+    <!-- Flight Results -->
+    <div class="col-md-12">
+      <div class="card mb-3" *ngFor="let flight of flights">
+        <div class="card-body">
+          <div class="row align-items-center">
+            <div class="col-md-3">
+              <h5 class="card-title mb-0">{{ flight.airline }}</h5>
+              <small class="text-muted">{{ flight.flightNumber }}</small>
+            </div>
+            <div class="col-md-3">
+              <div class="text-center">
+                <div class="h5 mb-0">{{ flight.departureTime }}</div>
+                <small class="text-muted">{{ flight.departure }}</small>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="text-center">
+                <div class="h5 mb-0">{{ flight.arrivalTime }}</div>
+                <small class="text-muted">{{ flight.arrival }}</small>
+              </div>
+            </div>
+            <div class="col-md-3 text-end">
+              <div class="price">₹{{ flight.price }}</div>
+              <button
+                class="btn btn-outline-warning mt-2"
+                [routerLink]="['/flight', flight.id]"
+              >
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <app-footer/> -->
