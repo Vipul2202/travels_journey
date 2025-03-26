@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class ApiService {
+export class ApiServiceCity {
   private adminBaseUrl = 'http://localhost:5007/api';
 
   constructor(private http: HttpClient) {}
@@ -56,5 +56,5 @@ export class ApiService {
       `${this.adminBaseUrl}/CityControllers/searchcities/${city1}/${city2}`
     );
   }
-  
+
 }
