@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class ApiService {
+export class ApiServicefare {
   private adminBaseUrl = 'http://localhost:5003/api';
 
   constructor(private http: HttpClient) {}
@@ -43,5 +43,5 @@ export class ApiService {
     return this.http.get(`${this.adminBaseUrl}/FareControllers/id/${id}`);
   }
 
-  
+
 }
